@@ -1,14 +1,14 @@
 package com.zhangxin.model.entity;
 
+import java.io.Serializable;
 import javax.persistence.*;
 
 @Table(name = "jk_user")
-public class User {
+public class User implements Serializable {
     /**
      * uid
      */
     @Id
-    @GeneratedValue(generator = "JDBC")
     private Integer id;
 
     /**
@@ -36,6 +36,8 @@ public class User {
      * 0:无效,1:有效
      */
     private Byte status;
+
+    private static final long serialVersionUID = 1L;
 
     /**
      * 获取uid

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhangxin.mapper.GoodsMapper">
+  <resultMap id="BaseResultMap" type="com.zhangxin.model.entity.Goods">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="goods_name" jdbcType="VARCHAR" property="goodsName" />
+    <result column="thumb" jdbcType="VARCHAR" property="thumb" />
+    <result column="market_price" jdbcType="DECIMAL" property="marketPrice" />
+    <result column="sale_price" jdbcType="DECIMAL" property="salePrice" />
+    <result column="avg_price" jdbcType="DECIMAL" property="avgPrice" />
+    <result column="advertise_title" jdbcType="VARCHAR" property="advertiseTitle" />
+    <result column="goods_info" jdbcType="VARCHAR" property="goodsInfo" />
+    <result column="sale_service" jdbcType="VARCHAR" property="saleService" />
+    <result column="notice" jdbcType="VARCHAR" property="notice" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="create_person" jdbcType="VARCHAR" property="createPerson" />
+    <result column="update_person" jdbcType="VARCHAR" property="updatePerson" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+</mapper>

@@ -6,19 +6,24 @@
 
     <classPathEntry location="D:\\home\vobile\bin\maven_repo\mysql\mysql-connector-java\5.1.39\mysql-connector-java-5.1.39.jar"  />
 
-    <context id="MybatisGenerator" targetRuntime="Mybatis3" >
+    <!--此处引用了tk.mybatis插件，应用targetRuntime="MyBatis3Simple" 和 targetRuntime="MyBatis3" 时有区别的，我们此处需要使用MyBatis3Simple，
+    使用MyBatis3会生成和父类相同的方法，项目启动时这些方法会多多次加载导致项目启动不起来-->
+    <context id="MybatisGenerator" targetRuntime="MyBatis3Simple" defaultModelType="flat">
 
         <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
         <plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
-        <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+        <plugin type="org.mybatis.generator.plugins.CaseInsensitiveLikePlugin" />
+        <!--<plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
             <property name="searchString" value="Example$" />
             <property name="replaceString" value="Criteria" />
-        </plugin>
+        </plugin>-->
         <!--MyBatis Generator可以通过插件机制来扩展其功能，其中RowBoundsPlugin是MyBatis Generator中自带的一个分页插件-->
         <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin" />
 
         <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
             <property name="mappers" value="com.zhangxin.mapper.CustomMapper"/>
+            <!--<property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>-->
         </plugin>
 
 
@@ -31,7 +36,7 @@
 
         <!--数据库连接信息：驱动类 链接地址 用户名 密码-->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://192.168.127.130:3306/zhangxin?useSSL=false"
+                        connectionURL="jdbc:mysql://192.168.127.131:3306/zhangxin?useSSL=false"
                         userId="root"
                         password="123456">
         </jdbcConnection>
@@ -59,12 +64,29 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
-        <table tableName="jk_user" domainObjectName="User">
+        <!--<table tableName="bu_request_info" domainObjectName="RequestInfo">
             <generatedKey column="id" sqlStatement="JDBC" />
+        </table>-->
+        <table tableName="jk_user" domainObjectName="User">
+            <!--<generatedKey column="id" sqlStatement="JDBC" />-->
             <!--<ignoreColumn column="clear_type"/>
             <ignoreColumn column="break_contract_amount"/>-->
         </table>
-
+        <table tableName="jk_goods" domainObjectName="Goods">
+            <!--<generatedKey column="id" sqlStatement="JDBC" />-->
+        </table>
+        <table tableName="jk_goods_ext" domainObjectName="GoodsExt">
+            <!--<generatedKey column="id" sqlStatement="JDBC" />-->
+        </table>
+        <table tableName="jk_goods_img" domainObjectName="GoodsImg">
+            <!--<generatedKey column="id" sqlStatement="JDBC" />-->
+        </table>
+        <table tableName="jk_order" domainObjectName="Order">
+           <!-- <generatedKey column="id" sqlStatement="JDBC" />-->
+        </table>
+        <table tableName="jk_order_item" domainObjectName="OrderItem">
+            <!--<generatedKey column="id" sqlStatement="JDBC" />-->
+        </table>
     </context>
 
 </generatorConfiguration>
