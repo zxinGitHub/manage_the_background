@@ -1,6 +1,7 @@
 package com.zhangxin;
 
 import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
+import com.github.miemiedev.mybatis.paginator.domain.PageList;
 import com.zhangxin.model.entity.User;
 import com.zhangxin.service.IUserService;
 import org.apache.ibatis.session.RowBounds;
@@ -28,8 +29,9 @@ public class TestUserController{
 
     @Test
     public void findUserList(){
-        RowBounds pageBounds = new RowBounds(0,8);
-        List<User> users = userService.findUserList(pageBounds);
+        PageBounds pageBounds = new PageBounds();
+        pageBounds.setLimit(10);
+        PageList<User> users = userService.findUserList(pageBounds);
         System.out.println("users.size():    "+users.size());
     }
 

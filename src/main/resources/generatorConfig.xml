@@ -8,7 +8,7 @@
 
     <!--此处引用了tk.mybatis插件，应用targetRuntime="MyBatis3Simple" 和 targetRuntime="MyBatis3" 时有区别的，我们此处需要使用MyBatis3Simple，
     使用MyBatis3会生成和父类相同的方法，项目启动时这些方法会多多次加载导致项目启动不起来-->
-    <context id="MybatisGenerator" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+    <context id="MybatisGenerator" targetRuntime="MyBatis3Simple">
 
         <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
         <plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
@@ -19,7 +19,7 @@
             <property name="replaceString" value="Criteria" />
         </plugin>-->
         <!--MyBatis Generator可以通过插件机制来扩展其功能，其中RowBoundsPlugin是MyBatis Generator中自带的一个分页插件-->
-        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin" />
+        <!--<plugin type="org.mybatis.generator.plugins.RowBoundsPlugin" />-->
 
         <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
             <property name="mappers" value="com.zhangxin.mapper.CustomMapper"/>

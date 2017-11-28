@@ -2,6 +2,7 @@ package com.zhangxin.service;
 
 
 import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
+import com.github.miemiedev.mybatis.paginator.domain.PageList;
 import com.zhangxin.model.entity.User;
 import org.apache.ibatis.session.RowBounds;
 
@@ -12,6 +13,6 @@ import java.util.List;
  */
 public interface IUserService {
 
-    List<User> findUserList(RowBounds pageBounds);
+    PageList<User> findUserList(PageBounds pageBounds);
 
 }
