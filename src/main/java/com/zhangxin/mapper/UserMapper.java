@@ -1,5 +1,6 @@
 package com.zhangxin.mapper;
 
+import com.zhangxin.annotation.ReadOnlyConnection;
 import com.zhangxin.model.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 

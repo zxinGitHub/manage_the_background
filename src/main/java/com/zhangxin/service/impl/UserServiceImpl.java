@@ -2,6 +2,7 @@ package com.zhangxin.service.impl;
 
 import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
 import com.github.miemiedev.mybatis.paginator.domain.PageList;
+import com.zhangxin.annotation.ReadOnlyConnection;
 import com.zhangxin.mapper.UserMapper;
 import com.zhangxin.model.entity.User;
 import com.zhangxin.service.IUserService;
@@ -21,10 +22,9 @@ public class UserServiceImpl implements IUserService,Serializable {
     private UserMapper userMapper;
 
     @Override
+    @ReadOnlyConnection(value = "zhangxinSlave")
     public PageList<User> findUserList(PageBounds pageBounds) {
         PageList<User> list = (PageList<User>) userMapper.selectByExampleAndRowBounds(null,pageBounds);
-        //PageList<User> list = (PageList<User>)userMapper.selectByExampleWithRowbounds(null,pageBounds);
         return list;
-        //return null;
     }
 }

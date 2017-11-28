@@ -67,26 +67,26 @@
         <!--<table tableName="bu_request_info" domainObjectName="RequestInfo">
             <generatedKey column="id" sqlStatement="JDBC" />
         </table>-->
-        <table tableName="jk_user" domainObjectName="User">
-            <!--<generatedKey column="id" sqlStatement="JDBC" />-->
-            <!--<ignoreColumn column="clear_type"/>
-            <ignoreColumn column="break_contract_amount"/>-->
+        <!--<table tableName="jk_user" domainObjectName="User">
+            &lt;!&ndash;<generatedKey column="id" sqlStatement="JDBC" />&ndash;&gt;
+            &lt;!&ndash;<ignoreColumn column="clear_type"/>
+            <ignoreColumn column="break_contract_amount"/>&ndash;&gt;
         </table>
         <table tableName="jk_goods" domainObjectName="Goods">
-            <!--<generatedKey column="id" sqlStatement="JDBC" />-->
+            &lt;!&ndash;<generatedKey column="id" sqlStatement="JDBC" />&ndash;&gt;
         </table>
         <table tableName="jk_goods_ext" domainObjectName="GoodsExt">
-            <!--<generatedKey column="id" sqlStatement="JDBC" />-->
+            &lt;!&ndash;<generatedKey column="id" sqlStatement="JDBC" />&ndash;&gt;
         </table>
         <table tableName="jk_goods_img" domainObjectName="GoodsImg">
-            <!--<generatedKey column="id" sqlStatement="JDBC" />-->
+            &lt;!&ndash;<generatedKey column="id" sqlStatement="JDBC" />&ndash;&gt;
         </table>
         <table tableName="jk_order" domainObjectName="Order">
-           <!-- <generatedKey column="id" sqlStatement="JDBC" />-->
+           &lt;!&ndash; <generatedKey column="id" sqlStatement="JDBC" />&ndash;&gt;
         </table>
         <table tableName="jk_order_item" domainObjectName="OrderItem">
-            <!--<generatedKey column="id" sqlStatement="JDBC" />-->
-        </table>
+            &lt;!&ndash;<generatedKey column="id" sqlStatement="JDBC" />&ndash;&gt;
+        </table>-->
     </context>
 
 </generatorConfiguration>

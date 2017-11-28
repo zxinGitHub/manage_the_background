@@ -24,7 +24,8 @@ public class ReadOnlyConnectionAspect {
     @Before("@annotation(readOnlyConnection)")
     public void changeDataSource(JoinPoint joinPoint, ReadOnlyConnection readOnlyConnection){
         //获取切换的数据源的名字
-        logger.info("切换数据源开始啦！！");
+        logger.debug("切换数据源开始啦！！");
+        System.out.println("切换数据源开始啦！！");
         String sourceName = readOnlyConnection.value();
         DBContextHolder.setDBType(sourceName);
     }
@@ -32,7 +33,8 @@ public class ReadOnlyConnectionAspect {
     @After("@annotation(readOnlyConnection)")
     public void clearDataSource(JoinPoint joinPoint, ReadOnlyConnection readOnlyConnection){
         //获取切换的数据源的名字
-        logger.info("清除数据源！！");
+        logger.debug("清除数据源！！");
+        System.out.println("清除数据源！！");
         DBContextHolder.clearDBType();
     }
 
